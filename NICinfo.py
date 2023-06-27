@@ -20,7 +20,7 @@ def get_born_date(nic : str) -> datetime.date:
         born_days -= 500
     year = get_born_year(nic)
     jan_first = datetime.date(year, 1, 1)
-    born_date = jan_first + datetime.timedelta(days = born_days - 1)
+    born_date = jan_first + datetime.timedelta(days = born_days -1 )
     return born_date
 
 #Get Gender of the people
@@ -37,7 +37,7 @@ nic_number = input("Please enter your NIC number : ")
 
 # validate user input
 if not validate(nic_number):
-    print("Invalid NIC! Please check the number again.")
+    print("\nInvalid NIC! Please check the number again.")
     exit(0)
 
 # Identify the born year
@@ -51,9 +51,11 @@ gender = get_gender(nic_number)
 
 # Print the output 
 iso_date = born_date.isoformat()
-print("Your birthday :",iso_date)
+print(f"\nYour birthday : {iso_date}")
 
 dayname = born_date.strftime('%A')
-print("Born day : ",dayname)
+print(f"\nBorn day : {dayname}")
 
-print("Gender :",gender)
+print(f"\nGender : {gender}")
+
+print(f"\nExit.")
